@@ -111,9 +111,12 @@ section {
   }
 }
 
-@media (max-width: 1010px) {
+@media (max-width: 770px) {
   #nav-icon {
     display: block;
+  }
+  #navbar {
+    font-size: 24px;
   }
   #all-links {
     position: fixed;
@@ -138,17 +141,29 @@ section {
     left: 0;
   }
 }
+@media (max-width: 480px) {
+  #nav-icon {
+    display: block;
+  }
+  #navbar {
+    font-size: 18px;
+  }
+
+  #all-links li {
+    font-size: 22px;
+  }
+}
 #nav-icon.active {
   font-size: 30px;
 }
 
-@media (min-width: 1011px) {
+/* @media (min-width: 1011px) {
   #all-links {
     display: flex;
     position: static;
     left: auto;
   }
-}
+} */
 
 .course {
   margin-top: 40px;
@@ -175,9 +190,15 @@ section {
   background-repeat: no-repeat;
   background-position: center;
 }
-@media (max-width: 730px) {
+@media (max-width: 770px) {
   .course {
     width: 70%;
+    height: auto;
+  }
+}
+@media (max-width: 480px) {
+  .course {
+    width: 100%;
     height: auto;
   }
 }
@@ -301,6 +322,14 @@ section {
     width: 70%;
   }
 }
+@media (max-width: 480px) {
+  .ourservices .ourservice1 img {
+    display: none;
+  }
+  .ourservices {
+    width: 100%;
+  }
+}
 .ourservices .ourservice2 {
   text-align: center;
 }
@@ -330,29 +359,31 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
+  /* margin-top: 10px; */
 }
 .child-grid img {
-  width: 180px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   border-radius: 15px;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 .child-grid {
   background-image: url(images/1.jpg);
-  gap: 20px;
+  /* gap: 20px; */
 }
 .child-grid p {
-  font-size: 18px;
+  font-size: 16px;
 }
 .child-grid h1 {
-  font-size: 22px;
-  line-height: 1.5em;
+  margin-top: 40px;
+  font-size: 20px;
+  /* line-height: 1.5em; */
 }
 @media (max-width: 770px) {
   .service-below-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    /* gap: 20px; */
     width: 95%;
     height: auto;
   }
@@ -366,12 +397,13 @@ section {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
   }
   .child-grid img {
     max-width: 100%;
     height: 100%;
     object-fit: cover;
+    margin-top: 10px;
   }
   .child-grid p,
   .child-grid h1 {
@@ -404,6 +436,7 @@ section {
   border-radius: 50%;
   width: 150px;
   height: 100px;
+  margin-top: 30px;
 }
 @media (max-width: 770px) {
   .portfolio .portfolio1 img {
@@ -411,6 +444,14 @@ section {
   }
   .portfolio {
     width: 70%;
+  }
+}
+@media (max-width: 480px) {
+  .portfolio .portfolio1 img {
+    display: none;
+  }
+  .portfolio {
+    width: 100%;
   }
 }
 .portfolio .portfolio2 {
@@ -445,10 +486,10 @@ section {
   /* padding: 10px; */
 }
 .portfolio-child img {
-  width: 150px;
+  width: 120px;
   height: 120px;
   border-radius: 15px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 .portfolio-child {
   background-image: url(images/1.jpg);
@@ -458,6 +499,7 @@ section {
   font-size: 18px;
 }
 .portfolio-child h1 {
+  margin-top: 50px;
   font-size: 22px;
   line-height: 1.5em;
 }
@@ -562,6 +604,10 @@ p {
 .final-grid p {
   margin: 8px 0;
 }
+.final-grid #final-grid-p {
+  font-size: 22px;
+  font-weight: bold;
+}
 @media (max-width: 770px) {
   .final-grid {
     width: 70%;
@@ -570,7 +616,27 @@ p {
   .final-grid .final-grid-img img {
     display: flex;
     position: relative;
+    width: 200px;
+    height: 200px;
     left: 20%;
+  }
+  .final-grid #final-grid-p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+@media (max-width: 480px) {
+  .final-grid {
+    width: 100%;
+    height: auto;
+  }
+  .final-grid .final-grid-img img {
+    width: 150px;
+    height: 150px;
+  }
+  .final-grid #final-grid-p {
+    font-size: 20px;
+    font-weight: bold;
   }
 }
 
@@ -649,69 +715,50 @@ p {
 {
   color: #0077b5;
 }
-
-footer .location,
-footer .Business-hour,
-footer .last {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  position: relative;
-  line-height: 1.5em;
-}
-
 footer .container {
-  display: flex;
-
-  gap: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
   align-items: flex-start;
-  flex-wrap: wrap;
-}
-.location {
-  order: 1;
-}
-.Business-hour {
-  order: 2;
-}
-.last {
-  order: 3;
-  align-self: flex-end;
-}
-
-.container #left-side {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1;
-}
-
-footer .location,
-footer .Business-hour {
-  min-width: 300px;
 }
 
 footer .location {
+  grid-column: 1;
+  grid-row: 1;
   background-image: url(images/c1.png);
   background-size: cover;
   background-position: center;
   color: white;
   font-size: 20px;
+  height: 120px;
+  width: 550px;
+  margin-left: 250px;
+  padding: 20px 20px;
+  border-radius: 8px;
+  line-height: 1.5em;
 }
 
 footer .Business-hour {
+  grid-column: 1;
+  grid-row: 1;
   background-image: url(images/c2.png);
   background-size: cover;
   background-position: center;
   color: white;
   font-size: 18px;
   padding: 10px;
+  height: 270px;
+  width: 550px;
+  margin-top: 130px;
+  margin-left: 250px;
+  padding: 20px 20px;
+  border-radius: 8px;
 }
 
 footer .last {
-  flex: 1;
+  grid-column: 2;
+  grid-row: 1;
   background-image: url(images/c3.png);
   background-size: cover;
   background-position: center;
@@ -719,6 +766,16 @@ footer .last {
   font-size: 18px;
   padding: 20px;
   position: relative;
+  width: 500px;
+  margin-left: 20px;
+  border-radius: 8px;
+}
+
+footer .container #left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
 }
 
 footer .location-grid {
@@ -795,10 +852,14 @@ footer .send-btn:hover {
 
 @media (max-width: 770px) {
   footer .container {
-    flex-direction: column;
-    gap: 2px;
-    width: 98%;
-    margin-left: 3px;
+    display: block;
+    gap: 15px;
+  }
+  footer .location {
+    height: 120px;
+  }
+  footer .Business-hour {
+    margin-top: 10px;
   }
 
   footer #left-side,
@@ -807,11 +868,12 @@ footer .send-btn:hover {
   footer .last {
     width: 98%;
     margin-left: 8px;
+    margin-right: 8px;
   }
 
   footer .last {
     position: relative;
-    width: 100%;
-    margin-left: 0;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 }
